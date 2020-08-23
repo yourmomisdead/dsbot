@@ -165,13 +165,3 @@ async function AutoMsgDelete(message, str, delay = 3000) {
     msg.delete();
   }, delay);
 }
-
-
-client.login(token);
-
-client.on('message', (message) => {
-  if(message.author.bot) return;
-
-  if(message.content == '안녕하세요!') {
-    return message.reply('누구신가요?');
-  }
