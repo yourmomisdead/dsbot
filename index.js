@@ -66,9 +66,9 @@ client.on('message', (message) => {
     ];
     let commandStr = '';
     let embed = new Discord.RichEmbed()
-      .setAuthor('Help of 콜라곰 BOT', helpImg)
+      .setAuthor('음봇 EMBED', helpImg)
       .setColor('#186de6')
-      .setFooter(`콜라곰 BOT ❤️`)
+      .setFooter(`음봇 Help By 콜라곰 BOT`)
       .setTimestamp()
     
     commandList.forEach(x => {
