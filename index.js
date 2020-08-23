@@ -88,7 +88,7 @@ client.on('message', (message) => {
 
     message.channel.send(embed)
   } else if(message.content == '!help') {
-    let helpImg = 'https://images-ext-1.discordapp.net/external/RyofVqSAVAi0H9-1yK6M8NGy2grU5TWZkLadG-rwqk0/https/i.imgur.com/EZRAPxR.png';
+    let helpImg = 'https://i.ibb.co/gPxwj4B/unnamed-1.jpg';
     let commandList = [
       {name: '!help', desc: 'help'},
       {name: 'ㅋㅋ루', desc: '삥뽕으로 대답해드립니다'},
