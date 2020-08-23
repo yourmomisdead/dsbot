@@ -13,6 +13,7 @@ client.on('ready', () => {
   client.user.setPresence({ game: { name: '!help를 채팅창에 입력하시면 명령어가 나와요!' }, status: 'online' })
 });
 
+
 client.on("guildMemberAdd", (member) => {
   const guild = member.guild;
   const newUser = member.user;
@@ -36,6 +37,14 @@ client.on('message', (message) => {
 
   if(message.content == 'ㅋㅋ루') {
     return message.reply('삥뽕');
+  }
+
+  if(message.content == '응') {
+    return message.reply('아니고');
+  }
+
+  if(message.content == '킹') {
+    return message.reply('받네?');
   }
 
   if(message.content == '!si') {
