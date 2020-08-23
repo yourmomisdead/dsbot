@@ -8,7 +8,7 @@ const byeChannelComment = "안녕히가세요.";
 
 client.on('ready', () => {
   console.log('응켜짐');
-  client.user.setPresence({ game: { name: '도움말은 !help에요.' }, status: 'online' })
+  client.user.setPresence({ game: { name: '도움이 필요하시다면 !help를 채팅창에 입력하세요!' }, status: 'online' })
 });
 
 client.on("guildMemberAdd", (member) => {
@@ -36,12 +36,15 @@ client.on('message', (message) => {
     return message.reply('삥뽕');
   }
 
+  client.on('message', (message) => {
+    if(message.author.bot) return;
+
   if(message.content == 'embed') {
     let img = 'https://cdn.discordapp.com/icons/419671192857739264/6dccc22df4cb0051b50548627f36c09b.webp?size=256';
     let embed = new Discord.RichEmbed()
       .setTitle('타이틀')
       .setURL('http://www.naver.com')
-      .setAuthor('나긋해', img, 'http://www.naver.com')
+      .setAuthor('Polalina', img, 'http://www.naver.com')
       .setThumbnail(img)
       .addBlankField()
       .addField('Inline field title', 'Some value here')
@@ -51,7 +54,7 @@ client.on('message', (message) => {
       .addField('Inline field title', 'Some value here1\nSome value here2\nSome value here3\n')
       .addBlankField()
       .setTimestamp()
-      .setFooter('나긋해가 만듬', img)
+      .setFooter('Polalina', img)
 
     message.channel.send(embed)
   } else if(message.content == '!help') {
@@ -109,7 +112,7 @@ client.on('message', (message) => {
     if(isNum && (clearLine <= 0 || 100 < clearLine)) {
       message.channel.send("1부터 100까지의 숫자만 입력해주세요.")
       return;
-    } else if(!isNum) { // c @나긋해 3
+    } else if(!isNum) { // c @Polalina 3
       if(message.content.split('<@').length == 2) {
         if(isNaN(message.content.split(' ')[2])) return;
 
