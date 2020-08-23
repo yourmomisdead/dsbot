@@ -8,7 +8,7 @@ const byeChannelComment = "안녕히가세요.";
 
 client.on('ready', () => {
   console.log('응켜짐');
-  client.user.setPresence({ game: { name: '!help를 쳐보세요.' }, status: 'online' })
+  client.user.setPresence({ game: { name: '도움말은 !help에요.' }, status: 'online' })
 });
 
 client.on("guildMemberAdd", (member) => {
@@ -168,3 +168,10 @@ async function AutoMsgDelete(message, str, delay = 3000) {
 
 
 client.login(token);
+
+client.on('message', (message) => {
+  if(message.author.bot) return;
+
+  if(message.content == '안녕하세요!') {
+    return message.reply('누구신가요?');
+  }
